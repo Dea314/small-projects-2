@@ -1,0 +1,104 @@
+/*button ripple effect*/
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  background-color: aquamarine;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  /* Digital clock 
+  background-image: url("https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");*/
+}
+
+.btn {
+  background-color: rgb(221, 170, 170);
+  padding: 20px 40px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  color: black;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn span {
+  position: relative;
+  z-index: 1;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  background-color: rgb(243, 11, 11);
+  width: 0px;
+  height: 0px;
+  left: var(--xPos);
+  top: var(--yPos);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  transition: width 0.5s, height 0.5s;
+}
+
+.btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/*digital clock styling */
+
+h2 {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 1.5rem;
+  text-align: center; /*center the text*/
+  color: slateblue;
+}
+
+.clock {
+  display: flex; /* set in the row*/
+}
+.clock div {
+  /*all divs inside of the clock*/
+  margin: 5px;
+  position: relative;
+}
+.clock span {
+  /*the span inside of the clock*/
+  width: 100px;
+  height: 80px;
+  background: slateblue;
+  opacity: 0.8;
+  color: beige;
+  display: flex; /*to get all in the center of screen */
+  justify-content: center; /*to get all in center of box*/
+  align-items: center; /*to get all in center of box*/
+  font-size: 50px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.clock .text {
+  /*text inside of the clock*/
+  height: 30px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: darkblue;
+  opacity: 0.8;
+  overflow: hidden;
+}
+
+.clock #ampm {
+  bottom: 0;
+  position: absolute;
+  width: 60px;
+  height: 30px;
+  font-size: 20px;
+  background: darkblue;
+  opacity: 0.8;
+}
+a {
+  padding: 20px 0;
+}
