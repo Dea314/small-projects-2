@@ -4,9 +4,6 @@
   box-sizing: border-box;
 }
 
-/* a {
-  padding-bottom: 100px;
-} */
 body {
   margin: 0;
   display: flex;
@@ -24,6 +21,7 @@ body {
   height: 200px;
   transform-style: preserve-3d;
   transform: perspective(1000px) rotateY(0deg);
+  transition: transform 0.7s;
 }
 
 .image-container span {
@@ -42,13 +40,13 @@ body {
 }
 
 .btn-container {
-  position: relative;
-  width: 80%;
+  position: absolute;
+  width: 70%;
 }
 .btn {
   position: absolute;
-  bottom: -80%;
-  background-color: aquamarine;
+  bottom: -200px;
+  background-color: rgb(235, 109, 32);
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -60,8 +58,16 @@ body {
 }
 
 #prev {
-  left: 35%;
+  left: 40%;
 }
 #next {
-  right: 35%;
+  right: 30%;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 300;
+  font-size: 1.2rem;
+  position: relative;
+  margin-bottom: 5rem;
 }
